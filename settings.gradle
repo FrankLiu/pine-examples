@@ -1,0 +1,5 @@
+rootProject.name = 'pine-examples'
+include 'banking'
+include 'loanapp'
+include 'hello'
+
