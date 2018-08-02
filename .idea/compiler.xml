@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="banking_main" target="1.8" />
       <module name="banking_test" target="1.8" />
+      <module name="cargo_main" target="1.8" />
+      <module name="cargo_test" target="1.8" />
       <module name="hello_main" target="1.8" />
       <module name="hello_test" target="1.8" />
       <module name="loanapp_main" target="1.8" />

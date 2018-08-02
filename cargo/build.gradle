@@ -1,0 +1,15 @@
+bootJar {
+    baseName = 'pine-examples-cargo'
+    version = '1.0-SNAPSHOT'
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.apache.commons:commons-lang3")
+    compile("mysql:mysql-connector-java")
+
+    testCompile("com.h2database:h2")
+    testCompile("junit:junit")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+

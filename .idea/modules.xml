@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/banking/banking.iml" filepath="$PROJECT_DIR$/.idea/modules/banking/banking.iml" group="banking" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/banking/banking_main.iml" filepath="$PROJECT_DIR$/.idea/modules/banking/banking_main.iml" group="banking" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/banking/banking_test.iml" filepath="$PROJECT_DIR$/.idea/modules/banking/banking_test.iml" group="banking" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cargo.iml" filepath="$PROJECT_DIR$/.idea/modules/cargo.iml" group="cargo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cargo/cargo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cargo/cargo_main.iml" group="cargo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cargo/cargo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cargo/cargo_test.iml" group="cargo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hello/hello.iml" filepath="$PROJECT_DIR$/.idea/modules/hello/hello.iml" group="hello" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hello/hello_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hello/hello_main.iml" group="hello" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hello/hello_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hello/hello_test.iml" group="hello" />
@@ -12,8 +15,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/loanapp/loanapp_main.iml" filepath="$PROJECT_DIR$/.idea/modules/loanapp/loanapp_main.iml" group="loanapp" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/loanapp/loanapp_test.iml" filepath="$PROJECT_DIR$/.idea/modules/loanapp/loanapp_test.iml" group="loanapp" />
       <module fileurl="file://$PROJECT_DIR$/.idea/pine-examples.iml" filepath="$PROJECT_DIR$/.idea/pine-examples.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pine-examples_main.iml" filepath="$PROJECT_DIR$/.idea/modules/pine-examples_main.iml" group="pine-examples" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pine-examples_test.iml" filepath="$PROJECT_DIR$/.idea/modules/pine-examples_test.iml" group="pine-examples" />
     </modules>
   </component>
 </project>
