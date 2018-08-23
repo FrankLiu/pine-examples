@@ -3,8 +3,11 @@ package io.pine.examples.cargo.domain.model.location;
 import io.pine.examples.cargo.domain.shared.ValueObject;
 import org.springframework.util.Assert;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.util.regex.Pattern;
+
+import lombok.Data;
 
 /**
  * United nations location code.
@@ -15,8 +18,10 @@ import java.util.regex.Pattern;
  * @author Frank
  * @sinace 2018/8/6 0006.
  */
+@Data
 @Embeddable
 public class UnLocode implements ValueObject<UnLocode> {
+    @Column(name = "unlocode", nullable = false)
     private String unlocode;
 
     // Country code is exactly two letters.
@@ -28,13 +33,6 @@ public class UnLocode implements ValueObject<UnLocode> {
         Assert.isTrue(VALID_PATTERN.matcher(countryAndLocation).matches(),
                 countryAndLocation + " is not a valid UN/LOCODE (does not match pattern)");
         this.unlocode = countryAndLocation.toUpperCase();
-    }
-
-    /**
-     * @return country code and location code concatenated, always upper case.
-     */
-    public String idString() {
-        return unlocode;
     }
 
     @Override
@@ -59,6 +57,6 @@ public class UnLocode implements ValueObject<UnLocode> {
 
     @Override
     public String toString() {
-        return idString();
+        return this.unlocode;
     }
 }

@@ -33,6 +33,8 @@ import java.util.Date;
  */
 @Data
 public final class HandlingEvent implements DomainEvent<HandlingEvent> {
+
+    private Long id;
     private Type type;
     private Voyage voyage;
     private Location location;

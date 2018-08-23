@@ -17,10 +17,12 @@ import java.util.List;
 @javax.persistence.Entity
 @Table(name = "t_voyage")
 public class Voyage implements Entity<Voyage> {
+    @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Embedded
     private VoyageNumber voyageNumber;
 
     private Schedule schedule;

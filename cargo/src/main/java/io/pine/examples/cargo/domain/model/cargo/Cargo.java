@@ -1,9 +1,14 @@
 package io.pine.examples.cargo.domain.model.cargo;
 
+import io.pine.examples.cargo.domain.model.handling.HandlingEvent;
+import io.pine.examples.cargo.domain.model.handling.HandlingHistory;
 import io.pine.examples.cargo.domain.model.location.Location;
 import io.pine.examples.cargo.domain.shared.Entity;
 
 import lombok.Data;
+import org.springframework.util.Assert;
+
+import javax.persistence.*;
 
 /**
  * A Cargo. This is the central class in the domain model,
@@ -44,16 +49,122 @@ import lombok.Data;
  * @sinace 2018/8/9 0009.
  */
 @Data
+@Table(name = "t_cargo")
+@javax.persistence.Entity
 public class Cargo implements Entity<Cargo> {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Embedded
     private TrackingId trackingId;
+
+    @Embedded
     private Location origin;
+
+    @Embedded
     private RouteSpecification routeSpecification;
+
+    @Embedded
     private Itinerary itinerary;
+
+    @Embedded
     private Delivery delivery;
 
+    public Cargo(final TrackingId trackingId, final RouteSpecification routeSpecification) {
+        Assert.notNull(trackingId, "trackingId is required!");
+        Assert.notNull(routeSpecification, "routeSpecification is required!");
+
+        this.trackingId = trackingId;
+        // Cargo origin never changes, even if the route specification changes.
+        // However, at creation, cargo orgin can be derived from the initial route specification.
+        this.origin = routeSpecification.getOrigin();
+        this.routeSpecification = routeSpecification;
+        this.delivery = Delivery.derivedFrom(routeSpecification, this.itinerary, HandlingHistory.EMPTY);
+    }
+
+    /**
+     * Specifies a new route for this cargo.
+     *
+     * @param routeSpecification route specification.
+     */
+    public void specifyNewRoute(final RouteSpecification routeSpecification) {
+        Assert.notNull(routeSpecification, "routeSpecification is required!");
+
+        this.routeSpecification = routeSpecification;
+        this.delivery = delivery.updateOnRouting(this.routeSpecification, this.itinerary);
+    }
+
+    public Itinerary getItinerary() {
+        return this.itinerary != null ? this.itinerary : Itinerary.EMPTY_ITINERARY;
+    }
+
+    /**
+     * Attach a new itinerary to this cargo.
+     *
+     * @param itinerary an itinerary. May not be null.
+     */
+    public void assignToRoute(final Itinerary itinerary) {
+        Assert.notNull(itinerary, "Itinerary is required for assignment");
+
+        this.itinerary = itinerary;
+        // Handling consistency within the Cargo aggregate synchronously
+        this.delivery = delivery.updateOnRouting(this.routeSpecification, this.itinerary);
+    }
+
+    /**
+     * Updates all aspects of the cargo aggregate status
+     * based on the current route specification, itinerary and handling of the cargo.
+     * <p/>
+     * When either of those three changes, i.e. when a new route is specified for the cargo,
+     * the cargo is assigned to a route or when the cargo is handled, the status must be
+     * re-calculated.
+     * <p/>
+     * {@link RouteSpecification} and {@link Itinerary} are both inside the Cargo
+     * aggregate, so changes to them cause the status to be updated <b>synchronously</b>,
+     * but changes to the delivery history (when a cargo is handled) cause the status update
+     * to happen <b>asynchronously</b> since {@link HandlingEvent} is in a different aggregate.
+     *
+     * @param handlingHistory handling history
+     */
+    public void deriveDeliveryProgress(final HandlingHistory handlingHistory) {
+        // TODO filter events on cargo (must be same as this cargo)
+
+        // Delivery is a value object, so we can simply discard the old one
+        // and replace it with a new
+        this.delivery = Delivery.derivedFrom(getRouteSpecification(), getItinerary(), handlingHistory);
+    }
 
     @Override
-    public boolean sameIdentityAs(Cargo other) {
-        return false;
+    public boolean sameIdentityAs(final Cargo other) {
+        return other != null && trackingId.sameValueAs(other.trackingId);
+    }
+
+    /**
+     * @param object to compare
+     * @return True if they have the same identity
+     * @see #sameIdentityAs(Cargo)
+     */
+    @Override
+    public boolean equals(final Object object) {
+        if (this == object) { return true; }
+        if (object == null || getClass() != object.getClass()) { return false; }
+
+        final Cargo other = (Cargo) object;
+        return sameIdentityAs(other);
+    }
+
+    /**
+     * @return Hash code of tracking id.
+     */
+    @Override
+    public int hashCode() {
+        return trackingId.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return trackingId.toString();
     }
 }

@@ -136,11 +136,8 @@ public class Delivery implements ValueObject<Delivery> {
         return isUnloadedAtDestination;
     }
 
-    /**
-     * @return Routing status.
-     */
-    public RoutingStatus routingStatus() {
-        return routingStatus;
+    public Location getLastKnownLocation() {
+        return this.lastKnownLocation != null ? this.lastKnownLocation : Location.UNKNOWN;
     }
 
     /**
@@ -148,6 +145,10 @@ public class Delivery implements ValueObject<Delivery> {
      */
     public Date calculatedAt() {
         return new Date(calculatedAt.getTime());
+    }
+
+    public Voyage getCurrentVoyage() {
+        return this.currentVoyage != null ? this.currentVoyage : Voyage.NONE;
     }
 
     // TODO add currentCarrierMovement (?)

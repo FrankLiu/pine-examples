@@ -4,6 +4,7 @@ import io.pine.examples.cargo.domain.shared.Entity;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
+import lombok.Data;
 
 /**\
  * A location is our model is stops on a journey, such as cargo
@@ -16,13 +17,13 @@ import javax.persistence.*;
  */
 @javax.persistence.Entity
 @Table(name = "t_location")
+@Data
 public class Location implements Entity<Location> {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "unlocode")
     @Embedded
     private UnLocode unLocode;
 
@@ -41,20 +42,6 @@ public class Location implements Entity<Location> {
         Assert.hasText(name, "name should not be empty!");
         this.unLocode = unLocode;
         this.name = name;
-    }
-
-    /**
-     * @return UN Locode for this location.
-     */
-    public UnLocode getUnLocode() {
-        return this.unLocode;
-    }
-
-    /**
-     * @return Actual name of this location, e.g. "Stockholm".
-     */
-    public String getName() {
-        return this.name;
     }
 
     /**

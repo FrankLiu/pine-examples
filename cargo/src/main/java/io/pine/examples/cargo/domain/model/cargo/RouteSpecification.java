@@ -29,7 +29,7 @@ public class RouteSpecification extends AbstractSpecification<Itinerary> impleme
         Assert.notNull(origin, "Origin is required!");
         Assert.notNull(destination, "Destination is required!");
         Assert.notNull(arrivalDeadline, "Arrival deadline is required!");
-        Assert.isTrue(origin.sameIdentityAs(destination), "Origin and destination can't be the same: " + origin);
+        Assert.isTrue(!origin.sameIdentityAs(destination), "Origin and destination can't be the same: " + origin);
 
         this.origin = origin;
         this.destination = destination;
