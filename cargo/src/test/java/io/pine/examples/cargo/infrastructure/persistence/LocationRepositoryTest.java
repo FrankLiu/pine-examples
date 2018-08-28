@@ -34,7 +34,7 @@ public class LocationRepositoryTest {
 
     @Before
     public void setup() {
-        List<Location> locations = Arrays.asList(
+        locationRepository.saveAll(Arrays.asList(
                 new Location(new UnLocode("SESTO"), "Stockholm"),
                 new Location(new UnLocode("AUMEL"), "Melbourne"),
                 new Location(new UnLocode("CNHKG"), "Hongkong"),
@@ -42,8 +42,7 @@ public class LocationRepositoryTest {
                 new Location(new UnLocode("FIHEL"), "Helsinki"),
                 new Location(new UnLocode("DEHAM"), "Hamburg"),
                 new Location(new UnLocode("USCHI"), "Chicago")
-        );
-        locationRepository.saveAll(locations);
+        ));
     }
 
     @After

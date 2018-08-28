@@ -4,6 +4,10 @@ import io.pine.examples.cargo.domain.shared.ValueObject;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.springframework.util.Assert;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,7 +17,10 @@ import java.util.List;
  * @author Frank
  * @sinace 2018/8/9 0009.
  */
+@Embeddable
 public class Schedule implements ValueObject<Schedule> {
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    @JoinColumn(name = "voyage_id")
     private List<CarrierMovement> carrierMovements = Collections.EMPTY_LIST;
 
     public static final Schedule EMPTY = new Schedule();

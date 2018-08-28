@@ -6,6 +6,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.springframework.util.Assert;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -14,11 +15,27 @@ import java.util.Date;
  * @author Frank
  * @sinace 2018/8/9 0009.
  */
+@Entity
+@Table(name = "t_carrier_movement")
 public class CarrierMovement implements ValueObject<CarrierMovement> {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name="departure_location_id", nullable=false, updatable=false)
     private Location departureLocation;
+
+    @ManyToOne
+    @JoinColumn(name="arrival_location_id", nullable = false, updatable = false)
     private Location arrivalLocation;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "departure_time", nullable = false)
     private Date departureTime;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "arrival_time", nullable = false)
     private Date arrivalTime;
 
     // NULL Object pattern

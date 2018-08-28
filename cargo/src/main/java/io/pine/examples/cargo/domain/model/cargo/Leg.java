@@ -8,6 +8,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.springframework.util.Assert;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -17,11 +18,31 @@ import java.util.Date;
  * @sinace 2018/8/9 0009.
  */
 @Data
+@Entity
+@Table(name = "t_leg")
 public class Leg implements ValueObject<Leg> {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "voyage_id", nullable = false)
     private Voyage voyage;
+
+    @ManyToOne
+    @JoinColumn(name = "load_location")
     private Location loadLocation;
+
+    @ManyToOne
+    @JoinColumn(name = "unload_location")
     private Location unloadLocation;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "load_time", nullable = false)
     private Date loadTime;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "unload_time", nullable = false)
     private Date unloadTime;
 
     public Leg(Voyage voyage, Location loadLocation, Location unloadLocation, Date loadTime, Date unloadTime) {

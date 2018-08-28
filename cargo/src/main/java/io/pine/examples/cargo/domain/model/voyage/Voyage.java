@@ -1,7 +1,6 @@
 package io.pine.examples.cargo.domain.model.voyage;
 
 import io.pine.examples.cargo.domain.model.location.Location;
-import io.pine.examples.cargo.domain.shared.Entity;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
@@ -14,25 +13,26 @@ import java.util.List;
  * @author Frank
  * @sinace 2018/8/9 0009.
  */
-@javax.persistence.Entity
+@Entity
 @Table(name = "t_voyage")
-public class Voyage implements Entity<Voyage> {
+public class Voyage{
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name="number", column=@Column(name="voyage_number"))
+    })
     private VoyageNumber voyageNumber;
 
+    @Embedded
     private Schedule schedule;
 
     // Null object pattern
     public static final Voyage NONE = new Voyage(
             new VoyageNumber(""), Schedule.EMPTY
     );
-
-    Voyage() {}
 
     public Voyage(VoyageNumber voyageNumber, Schedule schedule) {
         Assert.notNull(voyageNumber, "VoyageNumber is required!");
@@ -71,7 +71,6 @@ public class Voyage implements Entity<Voyage> {
         return sameIdentityAs(that);
     }
 
-    @Override
     public boolean sameIdentityAs(Voyage other) {
         return other != null && this.voyageNumber().sameValueAs(other.voyageNumber());
     }

@@ -47,18 +47,23 @@ import javax.persistence.*;
  * @author Frank
  * @sinace 2018/8/9 0009.
  */
-@Data
-@Table(name = "t_cargo")
+
 @Entity
+@Table(name = "t_cargo")
+@Data
 public class Cargo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Embedded
+    @AttributeOverrides(
+            @AttributeOverride(name = "id", column = @Column(name = "tracking_id"))
+    )
     private TrackingId trackingId;
 
-    @Embedded
+    @ManyToOne
+    @JoinColumn(name = "origin_id", nullable = false)
     private Location origin;
 
     @Embedded

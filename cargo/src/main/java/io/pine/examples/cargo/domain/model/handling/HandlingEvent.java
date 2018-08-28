@@ -10,6 +10,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.springframework.util.Assert;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -32,14 +33,35 @@ import java.util.Date;
  * @sinace 2018/8/9 0009.
  */
 @Data
+@Entity
+@Table(name = "t_handling_event")
 public final class HandlingEvent implements DomainEvent<HandlingEvent> {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type", nullable = false)
     private Type type;
+
+    @ManyToOne
+    @JoinColumn(name = "voyage_id", nullable = false)
     private Voyage voyage;
+
+    @ManyToOne
+    @JoinColumn(name = "location_id", nullable = false)
     private Location location;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "completion_time")
     private Date completionTime;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "registration_time")
     private Date registrationTime;
+
+    @ManyToOne
+    @JoinColumn(name = "cargo_id", nullable = false)
     private Cargo cargo;
 
     /**

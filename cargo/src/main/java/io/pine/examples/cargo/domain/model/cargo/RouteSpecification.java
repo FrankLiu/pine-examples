@@ -6,10 +6,13 @@ import io.pine.examples.cargo.domain.shared.AbstractSpecification;
 import io.pine.examples.cargo.domain.shared.ValueObject;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.springframework.jmx.export.annotation.ManagedNotification;
 import org.springframework.util.Assert;
 
 import java.util.Date;
 import lombok.Data;
+
+import javax.persistence.*;
 
 /**
  * Route specification. Describes where a cargo orign and destination is,
@@ -19,10 +22,18 @@ import lombok.Data;
  * @sinace 2018/8/9 0009.
  */
 @Data
+@Embeddable
 public class RouteSpecification extends AbstractSpecification<Itinerary> implements ValueObject<RouteSpecification> {
-
+    @ManyToOne
+    @JoinColumn(name = "spec_origin_id", nullable = false)
     private Location origin;
+
+    @ManyToOne
+    @JoinColumn(name = "spec_destination_id", nullable = false)
     private Location destination;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "spec_arrival_deadline", nullable = false)
     private Date arrivalDeadline;
 
     public RouteSpecification(final Location origin, final Location destination, final Date arrivalDeadline) {
