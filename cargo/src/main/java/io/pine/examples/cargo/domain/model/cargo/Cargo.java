@@ -3,7 +3,6 @@ package io.pine.examples.cargo.domain.model.cargo;
 import io.pine.examples.cargo.domain.model.handling.HandlingEvent;
 import io.pine.examples.cargo.domain.model.handling.HandlingHistory;
 import io.pine.examples.cargo.domain.model.location.Location;
-import io.pine.examples.cargo.domain.shared.Entity;
 
 import lombok.Data;
 import org.springframework.util.Assert;
@@ -50,10 +49,9 @@ import javax.persistence.*;
  */
 @Data
 @Table(name = "t_cargo")
-@javax.persistence.Entity
-public class Cargo implements Entity<Cargo> {
+@Entity
+public class Cargo {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -136,7 +134,6 @@ public class Cargo implements Entity<Cargo> {
         this.delivery = Delivery.derivedFrom(getRouteSpecification(), getItinerary(), handlingHistory);
     }
 
-    @Override
     public boolean sameIdentityAs(final Cargo other) {
         return other != null && trackingId.sameValueAs(other.trackingId);
     }

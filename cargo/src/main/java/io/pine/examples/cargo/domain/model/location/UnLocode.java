@@ -1,13 +1,12 @@
 package io.pine.examples.cargo.domain.model.location;
 
 import io.pine.examples.cargo.domain.shared.ValueObject;
+import lombok.Data;
 import org.springframework.util.Assert;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.util.regex.Pattern;
-
-import lombok.Data;
 
 /**
  * United nations location code.
@@ -27,6 +26,8 @@ public class UnLocode implements ValueObject<UnLocode> {
     // Country code is exactly two letters.
     // Location code is usually three letters, but may contain the numbers 2-9 as well
     private static final Pattern VALID_PATTERN = Pattern.compile("[a-zA-Z]{2}[a-zA-Z2-9]{3}");
+
+    UnLocode() { }
 
     public UnLocode(final String countryAndLocation) {
         Assert.notNull(countryAndLocation, "Country and location may not be null");

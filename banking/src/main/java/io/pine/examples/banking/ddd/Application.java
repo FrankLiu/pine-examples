@@ -19,28 +19,8 @@ import java.math.BigDecimal;
  */
 @SpringBootApplication
 public class Application {
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
-    @Bean
-    public CommandLineRunner demo(TransferFacade transferFacade) {
-        return (args) -> {
-            Account fromAccount = transferFacade.createAccount("A", new BigDecimal("3250"));
-            Account toAccount = transferFacade.createAccount("B", new BigDecimal("55.5"));
-
-            try {
-                transferFacade.transfer(fromAccount.getAccountId(), toAccount.getAccountId(), new BigDecimal("2000"));
-            } catch (AccountNotExistedException e) {
-                e.printStackTrace();
-            } catch (AccountUnderflowException e) {
-                e.printStackTrace();
-            }
-
-            logger.info(fromAccount.getAccountId() + " has balance: " + transferFacade.getBalance(fromAccount.getAccountId()));
-            logger.info(toAccount.getAccountId() + " has balance: " + transferFacade.getBalance(toAccount.getAccountId()));
-        };
-    }
 }

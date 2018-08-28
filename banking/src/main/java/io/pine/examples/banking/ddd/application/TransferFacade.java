@@ -4,6 +4,10 @@ import io.pine.examples.banking.ddd.domain.model.Account;
 import io.pine.examples.banking.ddd.domain.model.AccountUnderflowException;
 import io.pine.examples.banking.ddd.domain.model.TransferTransaction;
 import io.pine.examples.banking.ddd.domain.service.AccountNotExistedException;
+import io.pine.examples.banking.ddd.domain.service.TransferService;
+import io.pine.examples.banking.ddd.infrastructure.AccountRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
@@ -11,11 +15,23 @@ import java.math.BigDecimal;
  * @author Frank
  * @sinace 2018/8/1 0001.
  */
-public interface TransferFacade {
-    TransferTransaction transfer(String fromAccountId, String toAccountId, BigDecimal amount)
-            throws AccountNotExistedException, AccountUnderflowException;
+@Service
+public class TransferFacade {
+    @Autowired
+    private TransferService transferService;
 
-    Account createAccount(String accountId, BigDecimal balance);
+    @Autowired
+    private AccountRepository accountRepository;
 
-    BigDecimal getBalance(String accountId);
+    public TransferTransaction transfer(String fromAccountId, String toAccountId, BigDecimal amount) throws AccountNotExistedException, AccountUnderflowException {
+        return transferService.transfer(fromAccountId, toAccountId, amount);
+    }
+
+    public Account createAccount(String accountId, BigDecimal balance) {
+        return accountRepository.save(new Account(accountId, balance));
+    }
+
+    public BigDecimal getBalance(String accountId) {
+        return accountRepository.findByAccountId(accountId).getBalance();
+    }
 }

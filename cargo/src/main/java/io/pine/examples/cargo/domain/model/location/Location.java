@@ -1,6 +1,5 @@
 package io.pine.examples.cargo.domain.model.location;
 
-import io.pine.examples.cargo.domain.shared.Entity;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
@@ -15,12 +14,11 @@ import lombok.Data;
  * @author Frank
  * @sinace 2018/8/6 0006.
  */
-@javax.persistence.Entity
+@Entity
 @Table(name = "t_location")
 @Data
-public class Location implements Entity<Location> {
+public class Location {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -36,6 +34,8 @@ public class Location implements Entity<Location> {
     public static final Location UNKNOWN = new Location(
             new UnLocode("XXXXX"), "Unknown location"
     );
+
+    Location() { }
 
     public Location(final UnLocode unLocode, final String name) {
         Assert.notNull(unLocode, "unlocaode should not be null!");
@@ -71,7 +71,6 @@ public class Location implements Entity<Location> {
         return unLocode.hashCode();
     }
 
-    @Override
     public boolean sameIdentityAs(final Location other) {
         return this.unLocode.sameValueAs(other.unLocode);
     }
