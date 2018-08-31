@@ -14,6 +14,8 @@ import java.util.Iterator;
 
 import lombok.Data;
 
+import javax.persistence.*;
+
 import static io.pine.examples.cargo.domain.model.cargo.RoutingStatus.MISROUTED;
 import static io.pine.examples.cargo.domain.model.cargo.RoutingStatus.NOT_ROUTED;
 import static io.pine.examples.cargo.domain.model.cargo.RoutingStatus.ROUTED;
@@ -28,16 +30,43 @@ import static io.pine.examples.cargo.domain.model.handling.HandlingEvent.Type.*;
  * @sinace 2018/8/9 0009.
  */
 @Data
+@Embeddable
 public class Delivery implements ValueObject<Delivery> {
+    @Enumerated(EnumType.STRING)
+    @Column(name = "transport_status", nullable = false)
     private TransportStatus transportStatus;
+
+    @ManyToOne
+    @JoinColumn(name = "last_known_location_id", nullable = false)
     private Location lastKnownLocation;
+
+    @ManyToOne
+    @JoinColumn(name = "current_voyage_id", nullable = false)
     private Voyage currentVoyage;
+
+    @Column(name = "is_misdirected", nullable = false)
     private boolean misdirected;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "eta")
     private Date eta;
+
+    @Embedded
     private HandlingActivity nextExpectedActivity;
+
+    @Column(name = "unloaded_at_dest", nullable = false)
     private boolean isUnloadedAtDestination;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "routing_status", nullable = false)
     private RoutingStatus routingStatus;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "calculated_at")
     private Date calculatedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "last_event_id", nullable = false)
     private HandlingEvent lastEvent;
 
     private static final Date ETA_UNKOWN = null;

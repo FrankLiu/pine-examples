@@ -1,36 +1,31 @@
 package io.pine.examples.cargo.infrastructure.persistence;
 
-/**
- * @author Frank
- * @sinace 2018/8/27 0027.
- */
-
-import io.pine.examples.cargo.Application;
 import io.pine.examples.cargo.domain.model.location.Location;
 import io.pine.examples.cargo.domain.model.location.UnLocode;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Repository;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-
+/**
+ * @author Frank
+ * @sinace 2018/8/29 0029.
+ */
 @RunWith(SpringRunner.class)
 @DataJpaTest(includeFilters = @ComponentScan.Filter(Repository.class))
-public class LocationRepositoryTest {
+public class HandlingEventRepositoryTest {
+    @Autowired
+    private HandlingEventRepository handlingEventRepository;
 
     @Autowired
     private LocationRepository locationRepository;
+
 
     @Before
     public void setup() {
@@ -48,23 +43,8 @@ public class LocationRepositoryTest {
     @After
     public void tearDown() {
         locationRepository.deleteAll();
+        handlingEventRepository.deleteAll();
     }
 
-    @Test
-    public void testFindAll() throws Exception {
-        List<Location> allLocations = locationRepository.findAll();
 
-        assertNotNull(allLocations);
-        assertEquals(7, allLocations.size());
-    }
-
-    @Test
-    public void testFindByUnLocode() throws Exception {
-        final UnLocode melbourne = new UnLocode("AUMEL");
-        Optional<Location> location = locationRepository.findByUnLocode(melbourne);
-        assertNotNull(location.get());
-        assertEquals(melbourne, location.get().getUnLocode());
-
-        assertFalse(locationRepository.findByUnLocode(new UnLocode("NOLOC")).isPresent());
-    }
 }

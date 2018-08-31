@@ -9,6 +9,8 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.springframework.util.Assert;
 import lombok.Data;
 
+import javax.persistence.*;
+
 /**
  * A handling activity represents how and where a cargo can be handled,
  * and can be used to express predictions about what is expected to
@@ -18,12 +20,21 @@ import lombok.Data;
  * @sinace 2018/8/9 0009.
  */
 @Data
+@Embeddable
 public class HandlingActivity implements ValueObject<HandlingActivity> {
 
     // TODO make HandlingActivity a part of HandlingEvent too? There is some overlap.
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "next_expected_handling_event_type", nullable = false)
     private HandlingEvent.Type type;
+
+    @ManyToOne
+    @JoinColumn(name = "next_expected_location_id")
     private Location location;
+
+    @ManyToOne
+    @JoinColumn(name = "next_expected_voyage_id")
     private Voyage voyage;
 
     public HandlingActivity(final HandlingEvent.Type type, final Location location) {

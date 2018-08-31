@@ -5,6 +5,10 @@ import io.pine.examples.cargo.domain.model.location.Location;
 import io.pine.examples.cargo.domain.shared.ValueObject;
 import org.springframework.util.Assert;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +19,10 @@ import java.util.List;
  * @author Frank
  * @sinace 2018/8/9 0009.
  */
+@Embeddable
 public class Itinerary implements ValueObject<Itinerary> {
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cargo_id", nullable = false)
     private List<Leg> legs = Collections.emptyList();
 
     static final Itinerary EMPTY_ITINERARY = new Itinerary();
