@@ -5,14 +5,12 @@ package io.pine.examples.cargo.infrastructure.persistence;
  * @sinace 2018/8/27 0027.
  */
 
-import io.pine.examples.cargo.Application;
 import io.pine.examples.cargo.domain.model.location.Location;
 import io.pine.examples.cargo.domain.model.location.UnLocode;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Repository;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -51,7 +49,7 @@ public class LocationRepositoryTest {
     }
 
     @Test
-    public void testFindAll() throws Exception {
+    public void testFindAll() {
         List<Location> allLocations = locationRepository.findAll();
 
         assertNotNull(allLocations);
@@ -59,7 +57,7 @@ public class LocationRepositoryTest {
     }
 
     @Test
-    public void testFindByUnLocode() throws Exception {
+    public void testFindByUnLocode() {
         final UnLocode melbourne = new UnLocode("AUMEL");
         Optional<Location> location = locationRepository.findByUnLocode(melbourne);
         assertNotNull(location.get());
