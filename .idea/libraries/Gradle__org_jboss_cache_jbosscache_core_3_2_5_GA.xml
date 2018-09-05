@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: org.jboss.cache:jbosscache-core:3.2.5.GA">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/cache/jbosscache-core/3.2.5.GA/jbosscache-core-3.2.5.GA.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

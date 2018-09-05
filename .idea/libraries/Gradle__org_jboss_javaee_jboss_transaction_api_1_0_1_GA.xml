@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: org.jboss.javaee:jboss-transaction-api:1.0.1.GA">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/javaee/jboss-transaction-api/1.0.1.GA/jboss-transaction-api-1.0.1.GA.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
