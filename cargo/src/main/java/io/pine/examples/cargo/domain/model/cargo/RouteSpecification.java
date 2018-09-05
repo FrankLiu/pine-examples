@@ -25,11 +25,11 @@ import javax.persistence.*;
 @Embeddable
 public class RouteSpecification extends AbstractSpecification<Itinerary> implements ValueObject<RouteSpecification> {
     @ManyToOne
-    @JoinColumn(name = "spec_origin_id", nullable = false)
+    @JoinColumn(name = "spec_origin_id", updatable = false, foreignKey = @ForeignKey(name = "spec_origin_fk"))
     private Location origin;
 
     @ManyToOne
-    @JoinColumn(name = "spec_destination_id", nullable = false)
+    @JoinColumn(name = "spec_destination_id", foreignKey = @ForeignKey(name = "spec_destination_fk"))
     private Location destination;
 
     @Temporal(TemporalType.DATE)

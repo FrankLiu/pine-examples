@@ -26,7 +26,7 @@ public class Leg implements ValueObject<Leg> {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "voyage_id", nullable = false)
+    @JoinColumn(name = "voyage_id")
     private Voyage voyage;
 
     @ManyToOne
@@ -37,11 +37,11 @@ public class Leg implements ValueObject<Leg> {
     @JoinColumn(name = "unload_location")
     private Location unloadLocation;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "load_time", nullable = false)
     private Date loadTime;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "unload_time", nullable = false)
     private Date unloadTime;
 

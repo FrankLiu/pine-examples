@@ -45,18 +45,18 @@ public final class HandlingEvent implements DomainEvent<HandlingEvent> {
     private Type type;
 
     @ManyToOne
-    @JoinColumn(name = "voyage_id", nullable = false)
+    @JoinColumn(name = "voyage_id")
     private Voyage voyage;
 
     @ManyToOne
     @JoinColumn(name = "location_id", nullable = false)
     private Location location;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "completion_time")
     private Date completionTime;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "registration_time")
     private Date registrationTime;
 

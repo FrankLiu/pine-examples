@@ -30,11 +30,11 @@ public class HandlingActivity implements ValueObject<HandlingActivity> {
     private HandlingEvent.Type type;
 
     @ManyToOne
-    @JoinColumn(name = "next_expected_location_id")
+    @JoinColumn(name = "next_expected_location_id", foreignKey = @ForeignKey(name = "next_expected_location_fk"))
     private Location location;
 
     @ManyToOne
-    @JoinColumn(name = "next_expected_voyage_id")
+    @JoinColumn(name = "next_expected_voyage_id", foreignKey = @ForeignKey(name = "next_expected_voyage_fk"))
     private Voyage voyage;
 
     public HandlingActivity(final HandlingEvent.Type type, final Location location) {

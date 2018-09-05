@@ -4,12 +4,11 @@ import io.pine.examples.cargo.domain.shared.ValueObject;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.springframework.util.Assert;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collections;
 import java.util.List;
+
+import lombok.Data;
 
 /**
  * A voyage schedule.
@@ -18,9 +17,10 @@ import java.util.List;
  * @sinace 2018/8/9 0009.
  */
 @Embeddable
+@Data
 public class Schedule implements ValueObject<Schedule> {
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "voyage_id")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "voyage_id", foreignKey = @ForeignKey(name = "voyage_fk"))
     private List<CarrierMovement> carrierMovements = Collections.EMPTY_LIST;
 
     public static final Schedule EMPTY = new Schedule();
@@ -38,7 +38,7 @@ public class Schedule implements ValueObject<Schedule> {
     /**
      * @return Carrier movements.
      */
-    public List<CarrierMovement> carrierMovements() {
+    public List<CarrierMovement> getCarrierMovements() {
         return Collections.unmodifiableList(carrierMovements);
     }
 

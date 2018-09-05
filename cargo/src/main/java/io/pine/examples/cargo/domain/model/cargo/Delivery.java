@@ -37,11 +37,11 @@ public class Delivery implements ValueObject<Delivery> {
     private TransportStatus transportStatus;
 
     @ManyToOne
-    @JoinColumn(name = "last_known_location_id", nullable = false)
+    @JoinColumn(name = "last_known_location_id", foreignKey = @ForeignKey(name = "last_known_location_fk"))
     private Location lastKnownLocation;
 
     @ManyToOne
-    @JoinColumn(name = "current_voyage_id", nullable = false)
+    @JoinColumn(name = "current_voyage_id", foreignKey = @ForeignKey(name = "current_voyage_fk"))
     private Voyage currentVoyage;
 
     @Column(name = "is_misdirected", nullable = false)
@@ -66,7 +66,7 @@ public class Delivery implements ValueObject<Delivery> {
     private Date calculatedAt;
 
     @ManyToOne
-    @JoinColumn(name = "last_event_id", nullable = false)
+    @JoinColumn(name = "last_event_id", foreignKey = @ForeignKey(name = "last_event_fk"))
     private HandlingEvent lastEvent;
 
     private static final Date ETA_UNKOWN = null;

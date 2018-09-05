@@ -5,13 +5,9 @@ import io.pine.examples.cargo.domain.model.location.Location;
 import io.pine.examples.cargo.domain.shared.ValueObject;
 import org.springframework.util.Assert;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import javax.persistence.*;
+import java.util.*;
+import lombok.Data;
 
 /**
  * An itinerary.
@@ -19,16 +15,17 @@ import java.util.List;
  * @author Frank
  * @sinace 2018/8/9 0009.
  */
+@Data
 @Embeddable
 public class Itinerary implements ValueObject<Itinerary> {
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cargo_id", nullable = false)
-    private List<Leg> legs = Collections.emptyList();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "cargo_id", nullable = false, foreignKey = @ForeignKey(name = "itinerary_fk"))
+    private List<Leg> legs = new ArrayList<Leg>();
 
     static final Itinerary EMPTY_ITINERARY = new Itinerary();
     private static final Date END_OF_DAYS = new Date(Long.MAX_VALUE);
 
-    public Itinerary() {}
+    Itinerary() {}
 
     public Itinerary(final List<Leg> legs) {
         Assert.notEmpty(legs, "Legs should not be empty!");
@@ -37,9 +34,9 @@ public class Itinerary implements ValueObject<Itinerary> {
         this.legs = legs;
     }
 
-    public List<Leg> getLegs() {
-        return Collections.unmodifiableList(legs);
-    }
+//    public List<Leg> getLegs() {
+//        return Collections.unmodifiableList(legs);
+//    }
 
     /**
      * Test if the given handling event is expected when executing this itinerary.

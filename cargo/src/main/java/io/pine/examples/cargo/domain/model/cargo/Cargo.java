@@ -63,7 +63,7 @@ public class Cargo {
     private TrackingId trackingId;
 
     @ManyToOne
-    @JoinColumn(name = "origin_id", nullable = false)
+    @JoinColumn(name = "origin_id", updatable = false, foreignKey = @ForeignKey(name = "origin_fk"))
     private Location origin;
 
     @Embedded
