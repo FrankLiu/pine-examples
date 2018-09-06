@@ -49,7 +49,7 @@ public class LocationRepositoryTest {
     }
 
     @Test
-    public void testFindAll() throws Exception {
+    public void testFindAll() {
         List<Location> allLocations = locationRepository.findAll();
 
         assertNotNull(allLocations);
@@ -57,7 +57,7 @@ public class LocationRepositoryTest {
     }
 
     @Test
-    public void testFindByUnLocode() throws Exception {
+    public void testFindByUnLocode() {
         final UnLocode melbourne = new UnLocode("AUMEL");
         Optional<Location> location = locationRepository.findByUnLocode(melbourne);
         assertNotNull(location.get());
