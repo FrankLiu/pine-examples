@@ -65,12 +65,14 @@ public class Delivery implements ValueObject<Delivery> {
     @Column(name = "calculated_at")
     private Date calculatedAt;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "last_event_id", foreignKey = @ForeignKey(name = "last_event_fk"))
     private HandlingEvent lastEvent;
 
     private static final Date ETA_UNKOWN = null;
     private static final HandlingActivity NO_ACTIVITY = null;
+
+    Delivery() {}
 
     /**
      * Internal constructor.

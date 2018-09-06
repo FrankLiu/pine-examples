@@ -36,6 +36,8 @@ public class RouteSpecification extends AbstractSpecification<Itinerary> impleme
     @Column(name = "spec_arrival_deadline", nullable = false)
     private Date arrivalDeadline;
 
+    RouteSpecification() {}
+
     public RouteSpecification(final Location origin, final Location destination, final Date arrivalDeadline) {
         Assert.notNull(origin, "Origin is required!");
         Assert.notNull(destination, "Destination is required!");

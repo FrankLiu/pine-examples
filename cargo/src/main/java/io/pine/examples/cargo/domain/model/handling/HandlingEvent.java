@@ -107,6 +107,8 @@ public final class HandlingEvent implements DomainEvent<HandlingEvent> {
 
     }
 
+    HandlingEvent() {}
+
     /**
      * @param cargo            cargo
      * @param completionTime   completion time, the reported time that the event actually happened (e.g. the receive took place).

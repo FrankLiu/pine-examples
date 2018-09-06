@@ -45,6 +45,8 @@ public class Leg implements ValueObject<Leg> {
     @Column(name = "unload_time", nullable = false)
     private Date unloadTime;
 
+    Leg() {}
+
     public Leg(Voyage voyage, Location loadLocation, Location unloadLocation, Date loadTime, Date unloadTime) {
         Assert.noNullElements(new Object[] {voyage, loadLocation, unloadLocation, loadTime, unloadTime});
 

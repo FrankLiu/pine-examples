@@ -35,6 +35,8 @@ public class Location {
             new UnLocode("XXXXX"), "Unknown location"
     );
 
+    Location() {}
+
     public Location(final UnLocode unLocode, final String name) {
         Assert.notNull(unLocode, "unlocaode should not be null!");
         Assert.hasText(name, "name should not be empty!");

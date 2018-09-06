@@ -27,6 +27,8 @@ public class UnLocode implements ValueObject<UnLocode> {
     // Location code is usually three letters, but may contain the numbers 2-9 as well
     private static final Pattern VALID_PATTERN = Pattern.compile("[a-zA-Z]{2}[a-zA-Z2-9]{3}");
 
+    UnLocode() {}
+
     public UnLocode(final String countryAndLocation) {
         Assert.notNull(countryAndLocation, "Country and location may not be null");
         Assert.isTrue(VALID_PATTERN.matcher(countryAndLocation).matches(),

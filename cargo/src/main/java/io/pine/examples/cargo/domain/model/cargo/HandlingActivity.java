@@ -37,6 +37,8 @@ public class HandlingActivity implements ValueObject<HandlingActivity> {
     @JoinColumn(name = "next_expected_voyage_id", foreignKey = @ForeignKey(name = "next_expected_voyage_fk"))
     private Voyage voyage;
 
+    HandlingActivity() {}
+
     public HandlingActivity(final HandlingEvent.Type type, final Location location) {
         Assert.notNull(type, "Handling event type is required");
         Assert.notNull(location, "Location is required");

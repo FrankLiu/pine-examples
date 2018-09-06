@@ -7,7 +7,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.apache.commons:commons-lang3")
     compile("mysql:mysql-connector-java")
-    compile("net.sf.dozer:dozer-spring:5.5.1")
+    compile("net.sf.dozer:dozer-spring:5.5")
     compile("org.jboss.cache:jbosscache-core:3.2.5.GA")
 
     testCompile("com.h2database:h2")

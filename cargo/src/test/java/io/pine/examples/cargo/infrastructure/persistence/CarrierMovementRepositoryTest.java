@@ -6,6 +6,8 @@ import io.pine.examples.cargo.domain.model.handling.HandlingEvent;
 import io.pine.examples.cargo.domain.model.handling.HandlingHistory;
 import io.pine.examples.cargo.domain.model.location.SampleLocations;
 import io.pine.examples.cargo.domain.model.voyage.SampleVoyages;
+import io.pine.examples.cargo.domain.model.voyage.Voyage;
+import io.pine.examples.cargo.domain.model.voyage.VoyageNumber;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.After;
@@ -26,6 +28,8 @@ import java.util.List;
 
 import static io.pine.examples.cargo.common.DateTestUtil.toDate;
 import static io.pine.examples.cargo.domain.model.location.SampleLocations.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * @author Frank
@@ -83,14 +87,19 @@ public class CarrierMovementRepositoryTest {
 
     @After
     public void teardown() {
-//        cargoRepository.deleteAll();
-//        voyageRepository.deleteAll();
-//        locationRepository.deleteAll();
+//        handlingEventRepository.deleteAll();
+        cargoRepository.deleteAll();
+        voyageRepository.deleteAll();
+        locationRepository.deleteAll();
     }
 
     @Test
     public void testFind() {
-
+        List<Voyage> voyages = voyageRepository.findAll();
+        assertEquals(5, voyages.size());
+        Voyage voyage = voyageRepository.findByVoyageNumber(new VoyageNumber("0100S")).get();
+        assertNotNull(voyage);
+        assertEquals("0100S", voyage.voyageNumber().idString());
     }
 
 }
