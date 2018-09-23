@@ -10,7 +10,7 @@ import java.util.*;
 import lombok.Data;
 
 /**
- * An itinerary.
+ * An itinerary.(航程)
  *
  * @author Frank
  * @sinace 2018/8/9 0009.
@@ -34,9 +34,9 @@ public class Itinerary implements ValueObject<Itinerary> {
         this.legs = legs;
     }
 
-//    public List<Leg> getLegs() {
-//        return Collections.unmodifiableList(legs);
-//    }
+    public List<Leg> getLegs() {
+        return Collections.unmodifiableList(legs);
+    }
 
     /**
      * Test if the given handling event is expected when executing this itinerary.

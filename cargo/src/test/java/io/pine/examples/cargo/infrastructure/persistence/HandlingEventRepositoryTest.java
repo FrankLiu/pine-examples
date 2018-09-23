@@ -1,6 +1,7 @@
 package io.pine.examples.cargo.infrastructure.persistence;
 
 import io.pine.examples.cargo.domain.model.location.Location;
+import io.pine.examples.cargo.domain.model.location.SampleLocations;
 import io.pine.examples.cargo.domain.model.location.UnLocode;
 import org.junit.After;
 import org.junit.Before;
@@ -30,15 +31,7 @@ public class HandlingEventRepositoryTest {
 
     @Before
     public void setup() {
-        locationRepository.saveAll(Arrays.asList(
-                new Location(new UnLocode("SESTO"), "Stockholm"),
-                new Location(new UnLocode("AUMEL"), "Melbourne"),
-                new Location(new UnLocode("CNHKG"), "Hongkong"),
-                new Location(new UnLocode("JPTOK"), "Tokyo"),
-                new Location(new UnLocode("FIHEL"), "Helsinki"),
-                new Location(new UnLocode("DEHAM"), "Hamburg"),
-                new Location(new UnLocode("USCHI"), "Chicago")
-        ));
+        locationRepository.saveAll(SampleLocations.getAll());
     }
 
     @After

@@ -51,7 +51,7 @@ public class Voyage{
     /**
      * @return Schedule.
      */
-    public Schedule schedule() {
+    public Schedule getSchedule() {
         return schedule;
     }
 

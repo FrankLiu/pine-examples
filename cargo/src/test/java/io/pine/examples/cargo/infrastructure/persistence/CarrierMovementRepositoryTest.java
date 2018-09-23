@@ -6,6 +6,7 @@ import io.pine.examples.cargo.domain.model.handling.HandlingEvent;
 import io.pine.examples.cargo.domain.model.handling.HandlingHistory;
 import io.pine.examples.cargo.domain.model.location.SampleLocations;
 import io.pine.examples.cargo.domain.model.voyage.SampleVoyages;
+import io.pine.examples.cargo.domain.model.voyage.Schedule;
 import io.pine.examples.cargo.domain.model.voyage.Voyage;
 import io.pine.examples.cargo.domain.model.voyage.VoyageNumber;
 import org.hibernate.Session;
@@ -39,56 +40,19 @@ import static org.junit.Assert.assertNotNull;
 @DataJpaTest(includeFilters = @ComponentScan.Filter(Repository.class))
 public class CarrierMovementRepositoryTest {
     @Autowired
-    private VoyageRepository voyageRepository;
-
-    @Autowired
     private LocationRepository locationRepository;
 
     @Autowired
-    private CargoRepository cargoRepository;
-
-    @Autowired
-    private HandlingEventRepository handlingEventRepository;
+    private VoyageRepository voyageRepository;
 
     @Before
     public void setup() {
         locationRepository.saveAll(SampleLocations.getAll());
-        voyageRepository.saveAll(Arrays.asList(
-                SampleVoyages.HONGKONG_TO_NEW_YORK,
-                SampleVoyages.NEW_YORK_TO_DALLAS,
-                SampleVoyages.DALLAS_TO_HELSINKI,
-                SampleVoyages.HELSINKI_TO_HONGKONG,
-                SampleVoyages.DALLAS_TO_HELSINKI_ALT));
-
-        RouteSpecification routeSpecification = new RouteSpecification(HONGKONG, HELSINKI, toDate("2009-03-15"));
-        TrackingId trackingId = new TrackingId("ABC123");
-        Cargo abc123 = new Cargo(trackingId, routeSpecification);
-
-        List<Leg> legs = new ArrayList<>();
-        legs.add(new Leg(SampleVoyages.HONGKONG_TO_NEW_YORK, HONGKONG, NEWYORK, toDate("2009-03-02"), toDate("2009-03-05")));
-        legs.add(new Leg(SampleVoyages.NEW_YORK_TO_DALLAS, NEWYORK, DALLAS, toDate("2009-03-06"), toDate("2009-03-08")));
-        legs.add(new Leg(SampleVoyages.DALLAS_TO_HELSINKI, DALLAS, HELSINKI, toDate("2009-03-09"), toDate("2009-03-12")));
-        Itinerary itinerary = new Itinerary(legs);
-        abc123.assignToRoute(itinerary);
-        cargoRepository.save(abc123);
-
-        HandlingEvent event1 = new HandlingEvent(abc123, new Date(), toDate("2009-03-01"), HandlingEvent.Type.RECEIVE, HONGKONG);
-        HandlingEvent event2 = new HandlingEvent(abc123, new Date(), toDate("2009-03-02"), HandlingEvent.Type.LOAD, HONGKONG, SampleVoyages.HONGKONG_TO_NEW_YORK);
-        HandlingEvent event3 = new HandlingEvent(abc123, new Date(), toDate("2009-03-05"), HandlingEvent.Type.UNLOAD, NEWYORK, SampleVoyages.HONGKONG_TO_NEW_YORK);
-        handlingEventRepository.saveAll(Arrays.asList(
-           event1, event2, event3
-        ));
-
-        HandlingHistory handlingHistory = new HandlingHistory(handlingEventRepository.findAllByTrackingId(trackingId));
-        abc123.deriveDeliveryProgress(handlingHistory);
-        cargoRepository.save(abc123);
-
+        voyageRepository.saveAll(SampleVoyages.getAll());
     }
 
     @After
     public void teardown() {
-//        handlingEventRepository.deleteAll();
-        cargoRepository.deleteAll();
         voyageRepository.deleteAll();
         locationRepository.deleteAll();
     }
@@ -96,10 +60,13 @@ public class CarrierMovementRepositoryTest {
     @Test
     public void testFind() {
         List<Voyage> voyages = voyageRepository.findAll();
-        assertEquals(5, voyages.size());
-        Voyage voyage = voyageRepository.findByVoyageNumber(new VoyageNumber("0100S")).get();
+        assertEquals(15, voyages.size());
+        Voyage voyage = voyageRepository.findByVoyageNumber(new VoyageNumber("0301S")).get();
         assertNotNull(voyage);
-        assertEquals("0100S", voyage.voyageNumber().idString());
+        assertEquals("0301S", voyage.voyageNumber().idString());
+        Schedule schedule = voyage.getSchedule();
+        assertNotNull(schedule);
+        assertEquals(1, schedule.getCarrierMovements().size());
     }
 
 }

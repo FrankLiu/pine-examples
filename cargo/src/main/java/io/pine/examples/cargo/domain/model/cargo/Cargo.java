@@ -84,7 +84,7 @@ public class Cargo {
         // However, at creation, cargo orgin can be derived from the initial route specification.
         this.origin = routeSpecification.getOrigin();
         this.routeSpecification = routeSpecification;
-        this.delivery = Delivery.derivedFrom(routeSpecification, this.itinerary, HandlingHistory.EMPTY);
+        this.delivery = Delivery.derivedFrom(routeSpecification, Itinerary.EMPTY_ITINERARY, HandlingHistory.EMPTY);
     }
 
     /**
