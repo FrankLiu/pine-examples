@@ -3,7 +3,6 @@ include 'banking'
 include 'loanapp'
 include 'hello'
 include 'cargo'
-
-
-
+include 'payment'
+findProject(':payment')?.name = 'pine-examples-payment'
 
