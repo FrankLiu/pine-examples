@@ -18,4 +18,5 @@ import java.util.List;
 public interface HandlingEventRepository extends JpaRepository<HandlingEvent, Long> {
     @Query("from HandlingEvent where cargo.trackingId = :tid")
     List<HandlingEvent> findAllByTrackingId(@Param("tid") TrackingId trackingId);
+
 }
