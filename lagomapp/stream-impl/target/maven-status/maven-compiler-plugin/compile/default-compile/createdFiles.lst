@@ -1,0 +1,4 @@
+io\pine\examples\stream\impl\StreamServiceImpl.class
+io\pine\examples\stream\impl\StreamSubscriber.class
+io\pine\examples\stream\impl\StreamModule.class
+io\pine\examples\stream\impl\StreamRepository.class

@@ -1,0 +1,18 @@
+bootJar {
+    baseName = 'pine-examples-ucenter'
+    version = '1.0-SNAPSHOT'
+}
+
+dependencies {
+    compile("org.apache.commons:commons-lang3")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile group: 'org.springframework.statemachine', name: 'spring-statemachine-core', version: '2.1.0.M1'
+
+    // jdbc driver
+    compile("mysql:mysql-connector-java")
+    testCompile("com.h2database:h2")
+
+    // unit test
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}

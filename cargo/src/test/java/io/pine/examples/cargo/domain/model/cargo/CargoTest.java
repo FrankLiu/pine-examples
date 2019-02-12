@@ -52,7 +52,7 @@ public class CargoTest {
 
         final Cargo cargo = new Cargo(trackingId, routeSpecification);
 
-        assertEquals(NOT_ROUTED, cargo.getDelivery().getRoutingStatus());
+        assertEquals(MISROUTED, cargo.getDelivery().getRoutingStatus());
         assertEquals(NOT_RECEIVED, cargo.getDelivery().getTransportStatus());
         assertEquals(Location.UNKNOWN, cargo.getDelivery().getLastKnownLocation());
         assertEquals(Voyage.NONE, cargo.getDelivery().getCurrentVoyage());

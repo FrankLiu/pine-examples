@@ -1,0 +1,582 @@
+2019-02-11 14:15:19.781  INFO 8436 --- [main] i.p.e.petstore.PetStoreApplication       : Starting PetStoreApplication on jszx-刘军 with PID 8436 (E:\workspace\github\pine-examples\petstore\out\production\classes started by Administrator in E:\workspace\github\pine-examples)
+2019-02-11 14:15:19.785  INFO 8436 --- [main] i.p.e.petstore.PetStoreApplication       : No active profile set, falling back to default profiles: default
+2019-02-11 14:15:19.882  INFO 8436 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@ec756bd: startup date [Mon Feb 11 14:15:19 GMT+08:00 2019]; root of context hierarchy
+2019-02-11 14:15:22.033  INFO 8436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2019-02-11 14:15:22.063  INFO 8436 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-11 14:15:22.064  INFO 8436 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-02-11 14:15:22.084  INFO 8436 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_131\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Boxstarter;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\GTK2-Runtime\bin;D:\Go\bin;D:\nodejs\;;D:\Java\jdk1.8.0_131\bin;E:\opensource\java\apache-maven-3.5.0\bin;C:\Users\hzliujun\AppData\Local\atom\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Python27;;C:\Users\Administrator\AppData\Local\hyper\app-2.0.0\resources\bin;C:\Users\Administrator\go\bin;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-02-11 14:15:22.239  INFO 8436 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-11 14:15:22.240  INFO 8436 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2358 ms
+2019-02-11 14:15:22.335  INFO 8436 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-11 14:15:22.341  INFO 8436 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-11 14:15:22.861  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/register],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.register(io.pine.examples.petstore.domain.Account,org.springframework.ui.Model)
+2019-02-11 14:15:22.862  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/login],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.login(io.pine.examples.petstore.domain.Account,javax.servlet.http.HttpSession,org.springframework.ui.Model,org.springframework.validation.BindingResult)
+2019-02-11 14:15:22.863  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/editAccount],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.editAccount(javax.servlet.http.HttpSession)
+2019-02-11 14:15:22.863  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/signOut],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.signOut(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2019-02-11 14:15:22.863  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/viewRegisterForm],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.viewRegisterForm(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2019-02-11 14:15:22.864  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/usernameIsExist],methods=[GET]}" onto public void io.pine.examples.petstore.interfaces.AccountController.usernameIsExist(java.lang.String,javax.servlet.http.HttpServletResponse)
+2019-02-11 14:15:22.864  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/confirmEdit],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.confirmEdit(io.pine.examples.petstore.domain.Account,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:15:22.865  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/product],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewProduct(java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:15:22.865  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/main],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewMain()
+2019-02-11 14:15:22.865  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/category],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewCategory(java.lang.String,org.springframework.ui.Model)
+2019-02-11 14:15:22.866  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/item],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewItem(java.lang.String,org.springframework.ui.Model)
+2019-02-11 14:15:22.866  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/searchProduct],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.searchProduct(java.lang.String,org.springframework.ui.Model)
+2019-02-11 14:15:22.866  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/help],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.HelpController.viewHelp()
+2019-02-11 14:15:22.867  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.IndexController.viewIndex()
+2019-02-11 14:15:22.867  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/login]}" onto public java.lang.String io.pine.examples.petstore.interfaces.LanguagesController.loginLang(java.lang.String,org.springframework.ui.ModelMap)
+2019-02-11 14:15:22.869  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/register]}" onto public java.lang.String io.pine.examples.petstore.interfaces.LanguagesController.registerLang(java.lang.String,org.springframework.ui.ModelMap)
+2019-02-11 14:15:22.870  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/viewOrderForm],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.viewOrderForm(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:15:22.871  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/viewConfirmOrder],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.viewConfirmOrder(io.pine.examples.petstore.domain.Order,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:15:22.871  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/confirmShip],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.confirmShip(io.pine.examples.petstore.domain.Order,javax.servlet.http.HttpSession)
+2019-02-11 14:15:22.871  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/confirmOrder],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.confirmOrder(io.pine.examples.petstore.domain.Order,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:15:22.871  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/checkOrder],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.checkOrder(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:15:22.872  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/viewOrder],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.viewOrder(int,org.springframework.ui.Model)
+2019-02-11 14:15:22.880  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-02-11 14:15:22.881  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-02-11 14:15:22.948  INFO 8436 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@ec756bd: startup date [Mon Feb 11 14:15:19 GMT+08:00 2019]; root of context hierarchy
+2019-02-11 14:15:23.444  INFO 8436 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-02-11 14:15:23.446  INFO 8436 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-02-11 14:15:23.451  INFO 8436 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-02-11 14:15:23.496  INFO 8436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2019-02-11 14:15:23.499  INFO 8436 --- [main] i.p.e.petstore.PetStoreApplication       : Started PetStoreApplication in 4.444 seconds (JVM running for 5.744)
+2019-02-11 14:17:12.305  INFO 8436 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-02-11 14:17:12.305  INFO 8436 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-02-11 14:17:12.340  INFO 8436 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 35 ms
+2019-02-11 14:17:12.672  WARN 8436 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/css/jpetstore.css] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.578  INFO 8436 --- [http-nio-8088-exec-4] i.p.e.p.interfaces.CatalogController     : 到达主页
+2019-02-11 14:17:14.778  WARN 8436 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/logo-topbar.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.781  WARN 8436 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/css/jpetstore.css] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.786  WARN 8436 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/cart.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.809  WARN 8436 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/separator.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.813  WARN 8436 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_cats.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.814  WARN 8436 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_fish.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.818  WARN 8436 --- [http-nio-8088-exec-10] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_dogs.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.821  WARN 8436 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_birds.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.822  WARN 8436 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_reptiles.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.865  WARN 8436 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/fish_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.867  WARN 8436 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/dogs_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.871  WARN 8436 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/birds_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.873  WARN 8436 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/cats_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.874  WARN 8436 --- [http-nio-8088-exec-10] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/splash.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:14.879  WARN 8436 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/reptiles_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:16.941  INFO 8436 --- [http-nio-8088-exec-8] i.p.e.p.interfaces.CatalogController     : 到达主页
+2019-02-11 14:17:16.971  WARN 8436 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/logo-topbar.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:16.984  WARN 8436 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/css/jpetstore.css] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:16.994  WARN 8436 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/splash.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:16.997  WARN 8436 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/cats_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.003  WARN 8436 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_birds.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.008  WARN 8436 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/dogs_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.008  WARN 8436 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/cart.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.017  WARN 8436 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/birds_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.024  WARN 8436 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_cats.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.029  WARN 8436 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_dogs.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.032  WARN 8436 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_fish.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.036  WARN 8436 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/fish_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.038  WARN 8436 --- [http-nio-8088-exec-10] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_reptiles.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.047  WARN 8436 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/reptiles_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.053  WARN 8436 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/separator.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.733  INFO 8436 --- [http-nio-8088-exec-7] i.p.e.p.interfaces.CatalogController     : 到达主页
+2019-02-11 14:17:17.770  WARN 8436 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/logo-topbar.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.776  WARN 8436 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/cats_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.777  WARN 8436 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/splash.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.778  WARN 8436 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/cart.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.778  WARN 8436 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_birds.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.806  WARN 8436 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/css/jpetstore.css] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.815  WARN 8436 --- [http-nio-8088-exec-10] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/dogs_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.816  WARN 8436 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/birds_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.817  WARN 8436 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/fish_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.819  WARN 8436 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_fish.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.819  WARN 8436 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_cats.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.820  WARN 8436 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_dogs.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.849  WARN 8436 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/sm_reptiles.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.849  WARN 8436 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/reptiles_icon.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:17.850  WARN 8436 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/images/separator.gif] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:19.175  WARN 8436 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/account/viewLoginForm] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:17:20.785  INFO 8436 --- [http-nio-8088-exec-2] i.p.e.p.interfaces.CatalogController     : 到达主页
+2019-02-11 14:17:54.860  WARN 8436 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:19:56.355 ERROR 8436 --- [http-nio-8088-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): io.pine.examples.petstore.infrastructure.persistence.CategoryMapper.getCategory] with root cause
+
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): io.pine.examples.petstore.infrastructure.persistence.CategoryMapper.getCategory
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:49) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy68.getCategory(Unknown Source) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:197) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at com.sun.proxy.$Proxy69.getCategory(Unknown Source) ~[na:na]
+	at io.pine.examples.petstore.application.CatalogService.getCategory(CatalogService.java:34) ~[classes/:na]
+	at io.pine.examples.petstore.interfaces.CatalogController.viewCategory(CatalogController.java:43) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2019-02-11 14:26:45.746  INFO 7112 --- [main] i.p.e.petstore.PetStoreApplication       : Starting PetStoreApplication on jszx-刘军 with PID 7112 (E:\workspace\github\pine-examples\petstore\out\production\classes started by Administrator in E:\workspace\github\pine-examples)
+2019-02-11 14:26:45.783  INFO 7112 --- [main] i.p.e.petstore.PetStoreApplication       : No active profile set, falling back to default profiles: default
+2019-02-11 14:26:45.907  INFO 7112 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@501edcf1: startup date [Mon Feb 11 14:26:45 GMT+08:00 2019]; root of context hierarchy
+2019-02-11 14:26:47.613  INFO 7112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2019-02-11 14:26:47.639  INFO 7112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-11 14:26:47.639  INFO 7112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-02-11 14:26:47.648  INFO 7112 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_131\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Boxstarter;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\GTK2-Runtime\bin;D:\Go\bin;D:\nodejs\;;D:\Java\jdk1.8.0_131\bin;E:\opensource\java\apache-maven-3.5.0\bin;C:\Users\hzliujun\AppData\Local\atom\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Python27;;C:\Users\Administrator\AppData\Local\hyper\app-2.0.0\resources\bin;C:\Users\Administrator\go\bin;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-02-11 14:26:47.754  INFO 7112 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-11 14:26:47.754  INFO 7112 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1847 ms
+2019-02-11 14:26:47.841  INFO 7112 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-11 14:26:47.844  INFO 7112 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-11 14:26:48.347  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/register],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.register(io.pine.examples.petstore.domain.Account,org.springframework.ui.Model)
+2019-02-11 14:26:48.348  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/login],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.login(io.pine.examples.petstore.domain.Account,javax.servlet.http.HttpSession,org.springframework.ui.Model,org.springframework.validation.BindingResult)
+2019-02-11 14:26:48.348  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/editAccount],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.editAccount(javax.servlet.http.HttpSession)
+2019-02-11 14:26:48.348  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/signOut],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.signOut(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2019-02-11 14:26:48.348  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/viewRegisterForm],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.viewRegisterForm(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2019-02-11 14:26:48.348  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/usernameIsExist],methods=[GET]}" onto public void io.pine.examples.petstore.interfaces.AccountController.usernameIsExist(java.lang.String,javax.servlet.http.HttpServletResponse)
+2019-02-11 14:26:48.348  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/confirmEdit],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.confirmEdit(io.pine.examples.petstore.domain.Account,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:26:48.349  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/product],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewProduct(java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:26:48.350  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/main],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewMain()
+2019-02-11 14:26:48.350  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/category],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewCategory(java.lang.String,org.springframework.ui.Model)
+2019-02-11 14:26:48.350  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/item],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewItem(java.lang.String,org.springframework.ui.Model)
+2019-02-11 14:26:48.350  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/searchProduct],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.searchProduct(java.lang.String,org.springframework.ui.Model)
+2019-02-11 14:26:48.351  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/help],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.HelpController.viewHelp()
+2019-02-11 14:26:48.351  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.IndexController.viewIndex()
+2019-02-11 14:26:48.351  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/login]}" onto public java.lang.String io.pine.examples.petstore.interfaces.LanguagesController.loginLang(java.lang.String,org.springframework.ui.ModelMap)
+2019-02-11 14:26:48.352  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/register]}" onto public java.lang.String io.pine.examples.petstore.interfaces.LanguagesController.registerLang(java.lang.String,org.springframework.ui.ModelMap)
+2019-02-11 14:26:48.354  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/viewOrderForm],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.viewOrderForm(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:26:48.354  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/viewConfirmOrder],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.viewConfirmOrder(io.pine.examples.petstore.domain.Order,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:26:48.354  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/confirmShip],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.confirmShip(io.pine.examples.petstore.domain.Order,javax.servlet.http.HttpSession)
+2019-02-11 14:26:48.354  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/confirmOrder],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.confirmOrder(io.pine.examples.petstore.domain.Order,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:26:48.354  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/checkOrder],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.checkOrder(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:26:48.354  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/viewOrder],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.viewOrder(int,org.springframework.ui.Model)
+2019-02-11 14:26:48.359  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-02-11 14:26:48.360  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-02-11 14:26:48.421  INFO 7112 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@501edcf1: startup date [Mon Feb 11 14:26:45 GMT+08:00 2019]; root of context hierarchy
+2019-02-11 14:26:48.860  INFO 7112 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-02-11 14:26:48.861  INFO 7112 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-02-11 14:26:48.865  INFO 7112 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-02-11 14:26:48.897  INFO 7112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2019-02-11 14:26:48.900  INFO 7112 --- [main] i.p.e.petstore.PetStoreApplication       : Started PetStoreApplication in 3.568 seconds (JVM running for 4.012)
+2019-02-11 14:26:59.039  INFO 7112 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-02-11 14:26:59.039  INFO 7112 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-02-11 14:26:59.054  INFO 7112 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+2019-02-11 14:26:59.114  INFO 7112 --- [http-nio-8088-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-02-11 14:27:00.688 ERROR 7112 --- [http-nio-8088-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'root'@'192.168.2.8' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1714) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1224) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2190) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2221) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2016) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_131]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_131]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:117) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:123) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:365) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:194) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:460) [HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:534) [HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-2.7.9.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:151) [spring-jdbc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) [spring-jdbc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) [spring-jdbc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) [mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) [mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:338) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:103) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77) [mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) [mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy63.selectOne(Unknown Source) [na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166) [mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) [mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy68.getCategory(Unknown Source) [na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343) [spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:197) [spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) [spring-tx-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) [spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) [spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at com.sun.proxy.$Proxy69.getCategory(Unknown Source) [na:na]
+	at io.pine.examples.petstore.application.CatalogService.getCategory(CatalogService.java:34) [classes/:na]
+	at io.pine.examples.petstore.interfaces.CatalogController.viewCategory(CatalogController.java:43) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209) [spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) [spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) [spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877) [spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783) [spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) [spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) [spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) [spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) [spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) [spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2019-02-11 14:27:00.730 ERROR 7112 --- [http-nio-8088-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'192.168.2.8' (using password: YES)
+### The error may exist in file [E:\workspace\github\pine-examples\petstore\out\production\resources\mapper\CategoryMapper.xml]
+### The error may involve io.pine.examples.petstore.infrastructure.persistence.CategoryMapper.getCategory
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'192.168.2.8' (using password: YES)] with root cause
+
+java.sql.SQLException: Access denied for user 'root'@'192.168.2.8' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:965) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1714) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1224) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2190) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2221) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2016) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_131]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_131]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:117) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:123) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:365) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:194) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:460) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:534) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-2.7.9.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:151) ~[spring-jdbc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:338) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:103) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy63.selectOne(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy68.getCategory(Unknown Source) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:197) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at com.sun.proxy.$Proxy69.getCategory(Unknown Source) ~[na:na]
+	at io.pine.examples.petstore.application.CatalogService.getCategory(CatalogService.java:34) ~[classes/:na]
+	at io.pine.examples.petstore.interfaces.CatalogController.viewCategory(CatalogController.java:43) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2019-02-11 14:28:25.710  INFO 3788 --- [main] i.p.e.petstore.PetStoreApplication       : Starting PetStoreApplication on jszx-刘军 with PID 3788 (E:\workspace\github\pine-examples\petstore\out\production\classes started by Administrator in E:\workspace\github\pine-examples)
+2019-02-11 14:28:25.713  INFO 3788 --- [main] i.p.e.petstore.PetStoreApplication       : No active profile set, falling back to default profiles: default
+2019-02-11 14:28:25.882  INFO 3788 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7fc2413d: startup date [Mon Feb 11 14:28:25 GMT+08:00 2019]; root of context hierarchy
+2019-02-11 14:28:27.579  INFO 3788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2019-02-11 14:28:27.606  INFO 3788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-11 14:28:27.606  INFO 3788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-02-11 14:28:27.615  INFO 3788 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_131\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Boxstarter;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\GTK2-Runtime\bin;D:\Go\bin;D:\nodejs\;;D:\Java\jdk1.8.0_131\bin;E:\opensource\java\apache-maven-3.5.0\bin;C:\Users\hzliujun\AppData\Local\atom\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Python27;;C:\Users\Administrator\AppData\Local\hyper\app-2.0.0\resources\bin;C:\Users\Administrator\go\bin;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-02-11 14:28:27.732  INFO 3788 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-11 14:28:27.732  INFO 3788 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1850 ms
+2019-02-11 14:28:27.831  INFO 3788 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-11 14:28:27.836  INFO 3788 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-11 14:28:28.340  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/register],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.register(io.pine.examples.petstore.domain.Account,org.springframework.ui.Model)
+2019-02-11 14:28:28.341  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/login],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.login(io.pine.examples.petstore.domain.Account,javax.servlet.http.HttpSession,org.springframework.ui.Model,org.springframework.validation.BindingResult)
+2019-02-11 14:28:28.341  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/editAccount],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.editAccount(javax.servlet.http.HttpSession)
+2019-02-11 14:28:28.341  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/signOut],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.signOut(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2019-02-11 14:28:28.341  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/viewRegisterForm],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.viewRegisterForm(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2019-02-11 14:28:28.341  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/usernameIsExist],methods=[GET]}" onto public void io.pine.examples.petstore.interfaces.AccountController.usernameIsExist(java.lang.String,javax.servlet.http.HttpServletResponse)
+2019-02-11 14:28:28.341  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/confirmEdit],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.AccountController.confirmEdit(io.pine.examples.petstore.domain.Account,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:28:28.343  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/product],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewProduct(java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:28:28.343  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/main],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewMain()
+2019-02-11 14:28:28.343  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/category],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewCategory(java.lang.String,org.springframework.ui.Model)
+2019-02-11 14:28:28.343  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/catalog/item],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.viewItem(java.lang.String,org.springframework.ui.Model)
+2019-02-11 14:28:28.344  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/searchProduct],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.CatalogController.searchProduct(java.lang.String,org.springframework.ui.Model)
+2019-02-11 14:28:28.344  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/help],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.HelpController.viewHelp()
+2019-02-11 14:28:28.345  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.IndexController.viewIndex()
+2019-02-11 14:28:28.345  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/login]}" onto public java.lang.String io.pine.examples.petstore.interfaces.LanguagesController.loginLang(java.lang.String,org.springframework.ui.ModelMap)
+2019-02-11 14:28:28.345  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/account/register]}" onto public java.lang.String io.pine.examples.petstore.interfaces.LanguagesController.registerLang(java.lang.String,org.springframework.ui.ModelMap)
+2019-02-11 14:28:28.346  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/viewOrderForm],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.viewOrderForm(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:28:28.346  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/viewConfirmOrder],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.viewConfirmOrder(io.pine.examples.petstore.domain.Order,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:28:28.346  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/confirmShip],methods=[POST]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.confirmShip(io.pine.examples.petstore.domain.Order,javax.servlet.http.HttpSession)
+2019-02-11 14:28:28.347  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/confirmOrder],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.confirmOrder(io.pine.examples.petstore.domain.Order,javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:28:28.347  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/checkOrder],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.checkOrder(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2019-02-11 14:28:28.347  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/order/viewOrder],methods=[GET]}" onto public java.lang.String io.pine.examples.petstore.interfaces.OrderController.viewOrder(int,org.springframework.ui.Model)
+2019-02-11 14:28:28.352  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-02-11 14:28:28.353  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-02-11 14:28:28.415  INFO 3788 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7fc2413d: startup date [Mon Feb 11 14:28:25 GMT+08:00 2019]; root of context hierarchy
+2019-02-11 14:28:28.876  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-02-11 14:28:28.878  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-02-11 14:28:28.883  INFO 3788 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-02-11 14:28:28.916  INFO 3788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2019-02-11 14:28:28.920  INFO 3788 --- [main] i.p.e.petstore.PetStoreApplication       : Started PetStoreApplication in 3.627 seconds (JVM running for 4.113)
+2019-02-11 14:28:32.016  INFO 3788 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-02-11 14:28:32.016  INFO 3788 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-02-11 14:28:32.031  INFO 3788 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2019-02-11 14:28:32.093  INFO 3788 --- [http-nio-8088-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-02-11 14:28:32.836  INFO 3788 --- [http-nio-8088-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-02-11 14:28:32.914  INFO 3788 --- [http-nio-8088-exec-1] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-02-11 14:28:32.981  INFO 3788 --- [http-nio-8088-exec-1] o.s.jdbc.support.SQLErrorCodesFactory    : SQLErrorCodes loaded: [DB2, Derby, H2, HDB, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2019-02-11 14:28:32.993 ERROR 3788 --- [http-nio-8088-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'petstore.CATEGORY' doesn't exist
+### The error may exist in file [E:\workspace\github\pine-examples\petstore\out\production\resources\mapper\CategoryMapper.xml]
+### The error may involve io.pine.examples.petstore.infrastructure.persistence.CategoryMapper.getCategory-Inline
+### The error occurred while setting parameters
+### SQL: SELECT         CATID AS categoryId,         NAME,         DESCN AS description         FROM CATEGORY         WHERE CATID = ?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'petstore.CATEGORY' doesn't exist
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'petstore.CATEGORY' doesn't exist] with root cause
+
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'petstore.CATEGORY' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_131]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_131]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.Util.getInstance(Util.java:408) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1197) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-2.7.9.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-2.7.9.jar:na]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:103) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy63.selectOne(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy68.getCategory(Unknown Source) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:197) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at com.sun.proxy.$Proxy69.getCategory(Unknown Source) ~[na:na]
+	at io.pine.examples.petstore.application.CatalogService.getCategory(CatalogService.java:34) ~[classes/:na]
+	at io.pine.examples.petstore.interfaces.CatalogController.viewCategory(CatalogController.java:43) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.31.jar:8.5.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2019-02-11 14:29:28.070  WARN 3788 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/css/jpetstore.css] in DispatcherServlet with name 'dispatcherServlet'
+2019-02-11 14:48:05.261  WARN 3788 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/css/jpetstore.css] in DispatcherServlet with name 'dispatcherServlet'
