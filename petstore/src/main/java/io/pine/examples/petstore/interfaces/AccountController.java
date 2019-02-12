@@ -27,14 +27,23 @@ import java.util.List;
 @Controller
 @SessionAttributes({"account"})
 public class AccountController {
+
     @Autowired
     private AccountService accountService;
 
+    // 日志
     private final Logger logger = LoggerFactory.getLogger(AccountController.class);
+
+    // 跳往登录界面
+    @GetMapping("/account/viewLoginForm")
+    public String viewLoginForm(){
+        logger.info("进入登录界面"); // 输出DEBUG级别的日志
+        return "account/login";
+    }
 
     // 进行登录,注意， @Valid 为结构体，form表单的传值需要用这个方式
     @PostMapping("/account/login")
-    public String login(@Valid Account account , HttpSession session, Model model, BindingResult bindingResult){
+    public String login(@Valid Account account , HttpSession session, Model model,BindingResult bindingResult){
         logger.info("进行登录");
         if(bindingResult.hasErrors()){
             return bindingResult.getFieldError().getDefaultMessage();
@@ -187,4 +196,6 @@ public class AccountController {
         }
 
     }
+
+
 }

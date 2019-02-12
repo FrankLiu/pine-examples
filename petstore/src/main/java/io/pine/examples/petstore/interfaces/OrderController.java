@@ -127,8 +127,6 @@ public class OrderController {
     public String checkOrder(HttpSession session,Model model){
         Account account = (Account) session.getAttribute("account");
         List<Order> orderList = orderService.getOrdersByUsername(account.getUsername());
-
-
         session.setAttribute("orderList",orderList);
         model.addAttribute("orderList",orderList);
         logger.info("查询用户的订单历史记录");

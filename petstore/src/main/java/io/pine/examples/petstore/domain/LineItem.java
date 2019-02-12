@@ -18,6 +18,9 @@ public class LineItem implements Serializable {
     private Item item;
     private BigDecimal total;
 
+    public LineItem() {
+    }
+
     public LineItem(int lineNumber, CartItem cartItem) {
         this.lineNumber = lineNumber;
         this.quantity = cartItem.getQuantity();

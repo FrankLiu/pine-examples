@@ -8,59 +8,59 @@
 
     <select id="getAccountByUsername" parameterType="java.lang.String" resultType="io.pine.examples.petstore.domain.Account">
         SELECT
-        SIGNON.USERNAME,
-        ACCOUNT.EMAIL,
-        ACCOUNT.FIRSTNAME,
-        ACCOUNT.LASTNAME,
-        ACCOUNT.STATUS,
-        ACCOUNT.ADDR1 AS address1,
-        ACCOUNT.ADDR2 AS address2,
-        ACCOUNT.CITY,
-        ACCOUNT.STATE,
-        ACCOUNT.ZIP,
-        ACCOUNT.COUNTRY,
-        ACCOUNT.PHONE,
-        PROFILE.LANGPREF AS languagePreference,
-        PROFILE.FAVCATEGORY AS favouriteCategoryId,
-        PROFILE.MYLISTOPT AS listOption,
-        PROFILE.BANNEROPT AS bannerOption,
-        BANNERDATA.BANNERNAME
-        FROM ACCOUNT, PROFILE, SIGNON, BANNERDATA
-        WHERE ACCOUNT.USERID = #{username}
-        AND SIGNON.USERNAME = ACCOUNT.USERID
-        AND PROFILE.USERID = ACCOUNT.USERID
-        AND PROFILE.FAVCATEGORY = BANNERDATA.FAVCATEGORY
+        signon.USERNAME,
+        account.EMAIL,
+        account.FIRSTNAME,
+        account.LASTNAME,
+        account.STATUS,
+        account.ADDR1 AS address1,
+        account.ADDR2 AS address2,
+        account.CITY,
+        account.STATE,
+        account.ZIP,
+        account.COUNTRY,
+        account.PHONE,
+        profile.LANGPREF AS languagePreference,
+        profile.FAVCATEGORY AS favouriteCategoryId,
+        profile.MYLISTOPT AS listOption,
+        profile.BANNEROPT AS bannerOption,
+        bannerdata.BANNERNAME
+        FROM account, profile, signon, bannerdata
+        WHERE account.USERID = #{username}
+        AND signon.USERNAME = account.USERID
+        AND profile.USERID = account.USERID
+        AND profile.FAVCATEGORY = bannerdata.FAVCATEGORY
     </select>
 
     <select id="getAccountByUsernameAndPassword" parameterType="io.pine.examples.petstore.domain.Account" resultType="io.pine.examples.petstore.domain.Account">
         SELECT
-        SIGNON.USERNAME,
-        ACCOUNT.EMAIL,
-        ACCOUNT.FIRSTNAME,
-        ACCOUNT.LASTNAME,
-        ACCOUNT.STATUS,
-        ACCOUNT.ADDR1 AS address1,
-        ACCOUNT.ADDR2 AS address2,
-        ACCOUNT.CITY,
-        ACCOUNT.STATE,
-        ACCOUNT.ZIP,
-        ACCOUNT.COUNTRY,
-        ACCOUNT.PHONE,
-        PROFILE.LANGPREF AS languagePreference,
-        PROFILE.FAVCATEGORY AS favouriteCategoryId,
-        PROFILE.MYLISTOPT AS listOption,
-        PROFILE.BANNEROPT AS bannerOption,
-        BANNERDATA.BANNERNAME
-        FROM ACCOUNT, PROFILE, SIGNON, BANNERDATA
-        WHERE ACCOUNT.USERID = #{username}
-        AND SIGNON.PASSWORD = #{password}
-        AND SIGNON.USERNAME = ACCOUNT.USERID
-        AND PROFILE.USERID = ACCOUNT.USERID
-        AND PROFILE.FAVCATEGORY = BANNERDATA.FAVCATEGORY
+        signon.USERNAME,
+        account.EMAIL,
+        account.FIRSTNAME,
+        account.LASTNAME,
+        account.STATUS,
+        account.ADDR1 AS address1,
+        account.ADDR2 AS address2,
+        account.CITY,
+        account.STATE,
+        account.ZIP,
+        account.COUNTRY,
+        account.PHONE,
+        profile.LANGPREF AS languagePreference,
+        profile.FAVCATEGORY AS favouriteCategoryId,
+        profile.MYLISTOPT AS listOption,
+        profile.BANNEROPT AS bannerOption,
+        bannerdata.BANNERNAME
+        FROM account, profile, signon, bannerdata
+        WHERE account.USERID = #{username}
+        AND signon.PASSWORD = #{password}
+        AND signon.USERNAME = account.USERID
+        AND profile.USERID = account.USERID
+        AND profile.FAVCATEGORY = bannerdata.FAVCATEGORY
     </select>
 
     <update id="updateAccount" parameterType="io.pine.examples.petstore.domain.Account">
-        UPDATE ACCOUNT SET
+        UPDATE account SET
         EMAIL = #{email},
         FIRSTNAME = #{firstName},
         LASTNAME = #{lastName},
@@ -76,7 +76,7 @@
     </update>
 
     <insert id="insertAccount" parameterType="io.pine.examples.petstore.domain.Account">
-        INSERT INTO ACCOUNT
+        INSERT INTO account
         (EMAIL, FIRSTNAME, LASTNAME, STATUS, ADDR1, ADDR2, CITY, STATE, ZIP, COUNTRY, PHONE, USERID)
         VALUES
         (#{email}, #{firstName}, #{lastName}, #{status}, #{address1},  #{address2,jdbcType=VARCHAR}, #{city}, #{state}, #{zip}, #{country}, #{phone}, #{username})
@@ -95,7 +95,7 @@
     -->
 
     <update id="updateProfile" parameterType="io.pine.examples.petstore.domain.Account">
-        UPDATE PROFILE SET
+        UPDATE profile SET
         LANGPREF = #{languagePreference},
         FAVCATEGORY = #{favouriteCategoryId}
         WHERE USERID = #{username}
@@ -110,17 +110,17 @@
     -->
 
     <insert id="insertProfile" parameterType="io.pine.examples.petstore.domain.Account">
-        INSERT INTO PROFILE (LANGPREF, FAVCATEGORY, USERID)
+        INSERT INTO profile (LANGPREF, FAVCATEGORY, USERID)
         VALUES (#{languagePreference}, #{favouriteCategoryId}, #{username})
     </insert>
 
     <update id="updateSignon" parameterType="io.pine.examples.petstore.domain.Account">
-        UPDATE SIGNON SET PASSWORD = #{password}
+        UPDATE signon SET PASSWORD = #{password}
         WHERE USERNAME = #{username}
     </update>
 
     <insert id="insertSignon" parameterType="io.pine.examples.petstore.domain.Account">
-        INSERT INTO SIGNON (PASSWORD,USERNAME)
+        INSERT INTO signon (PASSWORD,USERNAME)
         VALUES (#{password}, #{username})
     </insert>
 

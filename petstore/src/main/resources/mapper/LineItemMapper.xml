@@ -13,12 +13,12 @@
         ITEMID,
         QUANTITY,
         UNITPRICE
-        FROM LINEITEM
+        FROM lineitem
         WHERE ORDERID = #{orderId}
     </select>
 
     <insert id="insertLineItem" parameterType="io.pine.examples.petstore.domain.LineItem">
-        INSERT INTO LINEITEM (ORDERID, LINENUM, ITEMID, QUANTITY, UNITPRICE)
+        INSERT INTO lineitem (ORDERID, LINENUM, ITEMID, QUANTITY, UNITPRICE)
         VALUES (#{orderId}, #{lineNumber}, #{itemId}, #{quantity}, #{unitPrice})
     </insert>
 

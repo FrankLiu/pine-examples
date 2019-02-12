@@ -30,13 +30,13 @@
         EXPRDATE AS expiryDate,
         LOCALE,
         ORDERDATE,
-        ORDERS.ORDERID,
+        orders.ORDERID,
         TOTALPRICE,
         USERID AS username,
         STATUS
-        FROM ORDERS, ORDERSTATUS
-        WHERE ORDERS.ORDERID = #{value}
-        AND ORDERS.ORDERID = ORDERSTATUS.ORDERID
+        FROM orders, orderstatus
+        WHERE orders.ORDERID = #{value}
+        AND orders.ORDERID = orderstatus.ORDERID
     </select>
 
     <select id="getOrdersByUsername" parameterType="java.lang.String" resultType="io.pine.examples.petstore.domain.Order">
@@ -63,18 +63,18 @@
         EXPRDATE AS expiryDate,
         LOCALE,
         ORDERDATE,
-        ORDERS.ORDERID,
+        orders.ORDERID,
         TOTALPRICE,
         USERID AS username,
         STATUS
-        FROM ORDERS, ORDERSTATUS
-        WHERE ORDERS.USERID = #{value}
-        AND ORDERS.ORDERID = ORDERSTATUS.ORDERID
+        FROM orders, orderstatus
+        WHERE orders.USERID = #{value}
+        AND orders.ORDERID = orderstatus.ORDERID
         ORDER BY ORDERDATE
     </select>
 
     <insert id="insertOrder" parameterType="io.pine.examples.petstore.domain.Order">
-        INSERT INTO ORDERS (ORDERID, USERID, ORDERDATE, SHIPADDR1, SHIPADDR2, SHIPCITY, SHIPSTATE,
+        INSERT INTO orders (ORDERID, USERID, ORDERDATE, SHIPADDR1, SHIPADDR2, SHIPCITY, SHIPSTATE,
         SHIPZIP, SHIPCOUNTRY, BILLADDR1, BILLADDR2, BILLCITY, BILLSTATE, BILLZIP, BILLCOUNTRY,
         COURIER, TOTALPRICE, BILLTOFIRSTNAME, BILLTOLASTNAME, SHIPTOFIRSTNAME, SHIPTOLASTNAME,
         CREDITCARD, EXPRDATE, CARDTYPE, LOCALE)
@@ -85,7 +85,7 @@
     </insert>
 
     <insert id="insertOrderStatus" parameterType="io.pine.examples.petstore.domain.Order">
-        INSERT INTO ORDERSTATUS (ORDERID, LINENUM, TIMESTAMP, STATUS)
+        INSERT INTO orderstatus (ORDERID, LINENUM, UPDATEDATE, STATUS)
         VALUES (#{orderId,jdbcType=NUMERIC}, #{orderId,jdbcType=NUMERIC}, #{orderDate,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR})
     </insert>
 

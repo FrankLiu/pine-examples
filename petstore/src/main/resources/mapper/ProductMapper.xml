@@ -12,7 +12,7 @@
         NAME,
         DESCN as description,
         CATEGORY as categoryId
-        FROM PRODUCT
+        FROM product
         WHERE PRODUCTID = #{productId}
     </select>
 
@@ -22,7 +22,7 @@
         NAME,
         DESCN as description,
         CATEGORY as categoryId
-        FROM PRODUCT
+        FROM product
         WHERE CATEGORY = #{value}
     </select>
 
@@ -32,7 +32,7 @@
         NAME,
         DESCN as description,
         CATEGORY as categoryId
-        from PRODUCT
+        from product
         WHERE lower(name) like #{value}
     </select>
 

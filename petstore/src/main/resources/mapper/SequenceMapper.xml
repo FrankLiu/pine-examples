@@ -8,12 +8,12 @@
 
     <select id="getSequence" parameterType="io.pine.examples.petstore.domain.Sequence" resultType="io.pine.examples.petstore.domain.Sequence">
         SELECT name, nextid
-        FROM SEQUENCE
+        FROM sequence
         WHERE NAME = #{name}
     </select>
 
     <update id="updateSequence" parameterType="io.pine.examples.petstore.domain.Sequence">
-        UPDATE SEQUENCE
+        UPDATE sequence
         SET NEXTID = #{nextId}
         WHERE NAME = #{name}
     </update>
