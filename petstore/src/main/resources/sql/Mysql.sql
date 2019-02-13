@@ -1,16 +1,16 @@
-drop table lineitem;
-drop table orderstatus;
-drop table orders;
-drop table account;
-drop table profile;
-drop table bannerdata;
-drop table inventory;
-drop table item;
-drop table product;
-drop table category;
-drop table supplier;
-drop table sequence;
-drop table signon;
+drop table if exists lineitem;
+drop table if exists orderstatus;
+drop table if exists orders;
+drop table if exists account;
+drop table if exists profile;
+drop table if exists bannerdata;
+drop table if exists inventory;
+drop table if exists item;
+drop table if exists product;
+drop table if exists category;
+drop table if exists supplier;
+drop table if exists sequence;
+drop table if exists signon;
 
 create table supplier (
     suppid int not null,

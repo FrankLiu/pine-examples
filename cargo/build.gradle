@@ -8,6 +8,9 @@ dependencies {
     compile("org.apache.commons:commons-lang3")
     compile("mysql:mysql-connector-java")
     compile("org.projectlombok:lombok:1.18.2")
+    compile("org.springframework.boot:spring-boot-starter-activemq")
+    compile("org.apache.activemq:activemq-broker")
+    compile("com.fasterxml.jackson.core:jackson-databind")
 
     testCompile("com.h2database:h2")
     testCompile("junit:junit:4.12")
